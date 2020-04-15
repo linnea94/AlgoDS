@@ -1,9 +1,23 @@
 //
 //
 //
-//
-//
-//
+
+public class Program
+	{
+		// För att testa implementationen av koden.
+		// En ny array deklareras. 
+		// SortMetoden kallas, arrayen passas som en parameter
+		//  Skriver ut arrayen men ett valt tecken som mellanrum
+
+		public static void Main(string[] args)
+
+			{
+				int[] integerValues = {-11, 12, -42, 0, 1, 90, 68, 6, -9};
+				QuickSort.Sort(integerValues);
+				Console.WriteLine(string.Join(" | ", integerValues)); 
+			}
+
+	}
 
 public static class QuickSort
 {
