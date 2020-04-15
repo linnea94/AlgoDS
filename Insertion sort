@@ -1,0 +1,9 @@
+//Arrayen delas även här in i två delar, osorterad och sorterad. 
+//I början är bara 1 element i den sorterade delen. 
+//Sen lokaliseras det minsta elementet i den osorterade delen, och flyttas till rätt plats i den sorterade delen. 
+//Dessa steg upprepas tills dess att den osorterade delen är tom
+
+
+class InsertionSort
+{
+}
