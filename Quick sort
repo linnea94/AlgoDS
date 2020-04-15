@@ -20,11 +20,20 @@ public class Program
 	}
 
 public static class QuickSort
+//Innehåller två varianter av sort-metoden. 
+//Den här första tar bara en parameter, nämligen arrayen som ska sorteras.
 {
   public static void Sort<T>(T[] array) where T : IComparable
   {
     Sort(array, 0, array.Length-1);
   }
+  
+  //Den andra varianten av sortmetodengör det möjligt att specificera de lägre och övre index som indikerar vilken 
+  // del av arrayen som ska sorteras. 
+  // Sortmetoden kollar om arrayen eller subarrayen har minst två element genom att jämföra värdena i lower och upper
+  // I det fallet kallar den på Partition-metoden, som är ansvarig för att dela, och sedan kallas sort-metoden rekursivt 
+  // för två sub-arrayer, nämligen lower, index från nedre till P och högre från P plis en till övre. 
+  
   private static void Sort<T>(T[]array, int lower, int upper) where T : IComparable
   {
     if (lower < upper)
@@ -34,6 +43,11 @@ public static class QuickSort
       Sort(array, p+1, upper);
     }
   }
+  
+  //Nedan följer koden för Partition. 
+  //I början är pivotvärdet valt och lagras som ett värde av pivot variabeln. 
+  //Sedan används do-while-loopen. Oklart vad som händer sen. 
+  
   private static int Partition<T>(T[] array, int lower, int upper) where T : IComparable
   {
     int i = lower; 
