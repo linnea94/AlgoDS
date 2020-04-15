@@ -25,6 +25,15 @@ public static class QuickSort
     int i = lower; 
     int j = upper; 
     T pivot = array[lower];
+    //T pivot = array[(lower + upper) / 2 ];
+    do
+    {
+      while (array[i].CompareTo(pivot) < 0) {i++;}
+      while (array[j].CompareTo(pivot) > 0 {j--;}
+      if (i>=j) {break;}
+      Swap(array, i, j); 
+    }
+    while 
   }
   
 }
