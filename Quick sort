@@ -20,6 +20,11 @@ public static class QuickSort
       Sort(array, p+1, upper);
     }
   }
-  
+  private static int Partition<T>(T[] array, int lower, int upper) where T : IComparable
+  {
+    int i = lower; 
+    int j = upper; 
+    T pivot = array[lower];
+  }
   
 }
