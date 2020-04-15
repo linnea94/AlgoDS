@@ -5,3 +5,21 @@
 //
 //
 
+public static class QuickSort
+{
+  public static void Sort<T>(T[] array) where T : IComparable
+  {
+    Sort(array, 0, array.Length-1);
+  }
+  private static void Sort<T>(T[]array, int lower, int upper) where T : IComparable
+  {
+    if (lower < upper)
+    {
+      int p = Partition(array, lower, upper);
+      Sort(array, lower, p);
+      Sort(array, p+1, upper);
+    }
+  }
+  
+  
+}
