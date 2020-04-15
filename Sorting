@@ -4,7 +4,8 @@ public class Program
 	
 		// För att testa implementationen av koden. 
 		// En ny array deklareras. 
-		// SortMetoden kallas, 
+		// SortMetoden kallas, arrayen passas som en parameter
+		//  Skriver ut arrayen men ett valt tecken som mellanrum
 		
 		public static void Main(string[] args)
 			{
