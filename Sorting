@@ -40,3 +40,11 @@ public static class SelectionSort
 		array[second] = temp; 
 	}
 }
+
+//Sort-metoden tar en parameter, arrayen. 
+//Sedan används en for-loop för att iterera genom elementen tills bara ett element kvarstår i den osorterade arrayen. 
+//Antalet iterationer är lika med längden på arrayen minus 1. 
+//I varje iteration så används ytterligare en for-loop för att hitta det minsta värdet i den osorterade delen, minValue. 
+//Det minsta värdet i den osorterade delen swappas då med det första elementet i den osorterade delen. 
+
+//Alltså, själva arrayen består av en osorterad del och en sorterad del. 
