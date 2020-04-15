@@ -33,7 +33,8 @@ public static class QuickSort
       if (i>=j) {break;}
       Swap(array, i, j); 
     }
-    while 
+    while (i <= j);
+    return j; 
   }
   
 }
