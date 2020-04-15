@@ -3,7 +3,24 @@
 //Sen lokaliseras det minsta elementet i den osorterade delen, och flyttas till rätt plats i den sorterade delen. 
 //Dessa steg upprepas tills dess att den osorterade delen är tom
 
+//Sort-metoden utför grejer som har med sortering att göra, array är parametern. 
+//I den här metoden används for-loopen för att iterera igenom alla element i den osorterade delen
+//Det första värdet av i-värdet, sätt till 1 istället för 0. 
+//I varje iteration av for-loopen, utförs en whileloop för att flytta det första elementet från den osorterade 
+// delen av arrayen till den korrekta delen, genom att använda swapmetoden. 
 
 class InsertionSort
 {
+  public static void Sort<T>(T[] array) where T : IComparable
+  {
+    for (int i = 1; i < array.Length; i++)
+    {
+      int j = i; 
+      while (j > 0 && array[j].CompareTo(array[j-1]) < 0)
+      {
+        Swap(array, j, j-1);
+        j--;
+      }
+    }
+  }
 }
