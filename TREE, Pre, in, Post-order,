@@ -9,7 +9,7 @@ namespace TreeVariants
                                    //because it can also be equipped with a set of methods regarding 
                                    //traversing the tree
          
-         //public method for traversing the tree in various modes: 
+         //public method for traversing the tree in various modes: Kallar på de privata metoderna
          //Only takes one parameter, the traversalEnum. 
                   
         public list<BinaryTreeNode<T>> Traverse(TraversalEnum mode)
@@ -17,7 +17,7 @@ namespace TreeVariants
             List<BinaryTreeNode<T>> nodes = new List<BinaryTreeNode<T>>();
             switch(mode)
             {
-                case TraversakEnum.PREORDER:
+                case TraversalEnum.PREORDER:
                 TraversePreOrder(Root, nodes);
                 break; 
                 
@@ -67,5 +67,5 @@ namespace TreeVariants
               TraversePostOrder(node.Right, result); 
               result.Add(node);
           }
-       }
-}
+       }   
+   }
