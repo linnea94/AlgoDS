@@ -1,0 +1,30 @@
+Namespace TreeVariants
+{
+    public class Tree<T>                       //This class represents the hole tree
+    {
+        public TreeNode<T> Root {get; set; }        //The class contains only one property, root
+                                                    //You can use this property to get access to the root node and then you 
+                                                    //can use its children property to obtain data of other nodes located in 
+                                                    //the tree
+        
+    }
+    
+    //// MAIN PROGRAM
+    
+    static void Main(string[] args)
+    {
+        Tree<int> tree = new Tree<int>();
+        tree.Root = new TreeNode<int>() { Data = 100};
+        tree.Root.Children = new List<TreeNode<int>>
+        
+        {
+          new TreeNode<int>() [Data = 50, Parent = tree.Root},
+          new TreeNode<int>() [Data = 1, Parent = tree.Root},
+          new TreeNode<int>() [Data = 150, Parent = tree.Root}
+        };
+              tree.Root.Children[2].Children = new List<TreeNode<int>>()
+              
+              new TreeNode<int>()
+              {Data = 30, Parent = tree.Root.Children[2]}
+    };
+    
