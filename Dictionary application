@@ -1,0 +1,57 @@
+//Application that will help employees of a shop find the location of a product
+
+namespace Dctionaries_and_sets
+{
+  class Program 
+  {
+    static void Main(string[] args)
+      {
+          Dictionary<string, string> products = new Dictionary<string, string>
+          {
+            {"42876298462", "A1"},
+            {"skflajsf", "B1"},
+            {"7861941", "C5"}
+          };
+          
+          products["3852793857"] = "D7";
+          
+          try                                     //trycatch prevents from collapsing 
+          {
+            products.Add("25235262", "A3")
+          }
+          catch (ArgumentException)
+          {
+            Console.WriteLine("The entry already exists")
+          }
+          
+          
+          Console.WriteLine("All products:");
+          if (products.Count == 0)
+            {
+              Console.WriteLine("Empty");
+            }
+            else
+            {
+              foreach (KeyValuePair<string, string> product in products)
+              {
+                Console.WriteLine($" - {product.Key}: {product.Value}"); 
+              }
+            }
+            //at the end, this code makes it possible to find the location of a product by its barcode
+            
+            Console.WriteLine();
+            Console.Write("Search by barcode: ");
+            string barcode = Console.ReadLine(); 
+            if (products.TryGeValue(barcode, out string location))    //trygetvalue to check if value exist
+              {
+                Console.WriteLine($"The product is in the area {location}.");
+              }
+              else
+              {
+                Console.WriteLine("The product does not eist.");
+              }
+              Console.Readline();
+            
+       }
+    } 
+ }
