@@ -67,5 +67,14 @@ namespace TreeVariants
               TraversePostOrder(node.Right, result); 
               result.Add(node);
           }
-       }   
+       } 
+       public int GetHeight()
+       {
+         int height = 0;
+         foreach (BinaryTreeNode<T> node in Traverse(TraversalEnum.PREORDER))
+         {
+            height = Math.Max(height, node.GetHeight()); 
+         }
+         return height; 
+       }
    }
