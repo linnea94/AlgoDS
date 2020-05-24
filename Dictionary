@@ -1,0 +1,20 @@
+namespace Dctionaries_and_sets
+{
+  class Program 
+  {
+    static void Main(string[] args)
+      {
+          Dictionary<string, string> dictionary = new Dictionary <string, string>
+          {
+            {"Key 1", "Value 1"}, {"Key 2", "Value 2"}
+          };
+          
+          string value = dictionary ["key"];
+          dictionary ["key"] = "value";           
+      }   
+      foreach (KeyValuePair<string, string> pair in dictionary)
+      {
+          Console.WriteLine($"{pair.Key} - {pair.value}");
+      }
+  }
+}
