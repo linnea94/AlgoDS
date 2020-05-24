@@ -1,0 +1,19 @@
+namespace Dctionaries_and_sets
+{
+  class Program 
+  {
+    static void Main(string[] args)
+    {
+      string value = (string)hashtale["key"];
+      hashtable["key"] = "value";
+      foreach (DictionaryEntry entry in hashtable)
+      {
+        Console.WriteLine($"{Entry.Key} - {entry.Value}");      //if you want to get all values from the hashtable you can use foreach
+      } 
+      //to iteate through all pairs stored in the collection      
+    }
+  
+  }
+
+
+}
