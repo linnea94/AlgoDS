@@ -1,0 +1,20 @@
+namespace TreeVariants
+{
+  public class TreeNode<T>                //this class contains 3 properties
+  {
+      public T Data {get; set; }                     //the data stored in the node of the type specified while creating an instance of the class
+      public TreeNode<T> Parent {get; set; }            //a reference to the parent node
+      public List<TreeNode<T>> Children {get; set; }      // a collection of references to child nodes
+      public int GetHeight()                             //the get height method, which returns a height of the node, i.e the distancec to the root node
+      {
+        int height = 1;                              // uses the while loop to go up from the node until there is no parent element when the root is reached
+        Treenode<T> current = this; 
+        while (current.Parent !=null)
+        {
+          height++;
+          current = current.Parent; 
+        }
+        return height; 
+      }
+   } 
+}
