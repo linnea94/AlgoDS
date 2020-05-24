@@ -25,10 +25,20 @@ namespace Dctionaries_and_sets
                   Console.ForegroundColor = ConsoleColor.Gray; 
                 }
             }
+            else
+            {
+              break;
+            }
           }
+          while (true);
           
-      }
-      
-   }
-   
+          Console.WriteLine(); 
+          Console.WriteLine("A list of used coupons: ");
+          foreach (int coupon in usedCoupons)
+          {
+            Console.WriteLine(coupon);
+          }
+          Console.ReadLine();          
+      }      
+   }  
 }
