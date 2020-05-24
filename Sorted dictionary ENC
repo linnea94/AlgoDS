@@ -1,0 +1,48 @@
+//Simple encyclopedia 
+
+namespace Dctionaries_and_sets
+{
+  class Program 
+  {
+    static void Main(string[] args)
+      {
+          SortedDictionary<string, string> definitions = new SortedDictionary<string, string>();
+          do
+          {
+            Console.Write("hoose an option ([a] - add, [1] - list):");
+            ConsoleKeyInfo keyInfo = Console.ReadKey();
+            Console.WriteLine();
+            if (keyInfo.Key == ConsoleKey.A)
+             {
+              Console.ForegroundColor = ConsoleColor.White;
+              Console.Write("Enter the name:");
+              string name = Console.ReadLine();
+              Console.Write("Enter the explanation: ");
+              string explanation = Console.ReadLine();
+              definitions[name] = explanation; 
+              Console.ForegroundColor = ConsoleColor.Gray;
+             }
+             else if (keyInfo.Key == ConsoleKey.K)
+             {
+                Console.ForegroundColor = ConsoleColor.White;
+                foreach(KeyValuePair<string, string> definition in deinitions ////////////////// slutet? 
+                {
+                  Console.WriteLine($"{definition.Key}: {definition.value}");
+                }
+                Console.ForegroundColot = ConsoleColor.Gray; 
+             }
+             else
+             {
+                Console.ForegroundColor = ConsoleColor.White; 
+                Console.WriteLine("Do you want to exit the program? Press [y] or [n]");
+                Console.ForegroundColor = ConsoleColor.Gray; 
+                if (Console.ReadKey().Key == ConsoleKey.y)
+                {
+                  break;
+                }
+             }
+          }
+          while (true);
+      }
+   }
+}
