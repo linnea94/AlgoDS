@@ -1,0 +1,71 @@
+namespace TreeVariants
+{
+    public class BinaryTree<T>                     //Represents the hole binary tree, containt 2 properties
+    {
+      public BinaryTreeNode<T> Root {get; set; }          //indicates the root node  
+      public int Count {get; set; }                     //total number of nodes places in the tree
+    }
+                                   //Of course, these are not the only members of the class 
+                                   //because it can also be equipped with a set of methods regarding 
+                                   //traversing the tree
+         
+         //public method for traversing the tree in various modes: 
+         //Only takes one parameter, the traversalEnum. 
+                  
+        public list<BinaryTreeNode<T>> Traverse(TraversalEnum mode)
+        {
+            List<BinaryTreeNode<T>> nodes = new List<BinaryTreeNode<T>>();
+            switch(mode)
+            {
+                case TraversakEnum.PREORDER:
+                TraversePreOrder(Root, nodes);
+                break; 
+                
+                case TraversalEnum.INORDER:
+                TraverseInOrder(Root, nodes); 
+                break; 
+                
+                case TraversalEnum.POSTORDER:
+                TraversePostOrder(Root, nodes); 
+                break; 
+            }
+            return nodes; 
+        }
+     
+       //First method; pre-order as a reminder it first visits the current 
+       //node then it's left child followed by the right child
+       
+       private void TraversePreOrder(BinaryTreeNode<T> node, List<BinaryTreeNode<T>> result)
+       {
+          if (node != null)     //check that parameter is not equal to null
+           {
+              result.Add(node);    //Then you add the current node to the collection
+              TraversePreOrder(node.Left, result);     //Start for left
+              TraversePreOrder(node.Right, result);              //Start for right
+           }
+       }
+       
+       //Second method, in order
+       
+       private void TraverseInOrder(BinaryTreeNode<T> node, List<BinaryTreeNode<T>> result)
+       {
+          if (node != null)
+          {
+            TraverseInOrder(node.Left, result);
+            result.Add(node);                      
+            TraverseInORder(node.Right, result);         
+          }
+       }
+       
+       //third method, post-order. 
+       
+         private void TraversePostOrder(BinaryTreeNode<T> node, List<BinaryTreeNode<T>> result)
+       {
+          if (node != null) 
+          {
+              TraversePostOrder(node.Left, result);
+              TraversePostOrder(node.Right, result); 
+              result.Add(node);
+          }
+       }
+}
