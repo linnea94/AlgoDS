@@ -9,8 +9,6 @@ Namespace TreeVariants
         
     }
     
-    //// MAIN PROGRAM
-    
     static void Main(string[] args)
     {
         Tree<int> tree = new Tree<int>();
